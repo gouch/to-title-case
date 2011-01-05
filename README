@@ -1,0 +1,1 @@
+Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
