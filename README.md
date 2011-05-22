@@ -5,8 +5,8 @@ Include the to-title-case.js script and use the new .toTitleCase() method on the
 
 License
 -------
-To Title Case 1.2
-Copyright (c) 2008-2011 David Gouch. Licensed under the MIT License.
+To Title Case 1.1.2 <http://individed.com/code/to-title-case/>  
+Copyright (c) 2008-2011 David Gouch. Licensed under the MIT License. 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
