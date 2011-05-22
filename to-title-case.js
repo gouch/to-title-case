@@ -1,10 +1,6 @@
-﻿/* To Title Case 1.1.1
- * David Gouch <http://individed.com>
- * 23 May 2008
- * License: http://individed.com/code/to-title-case/license.txt
- *
- * In response to John Gruber's call for a Javascript version of his script: 
- * http://daringfireball.net/2008/05/title_case
+﻿/* 
+ * To Title Case 1.1.2 
+ * Copyright (c) 2008-2011 David Gouch. Licensed under the MIT License. 
  */
 
 String.prototype.toTitleCase = function() {
