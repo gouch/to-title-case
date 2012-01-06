@@ -12,7 +12,7 @@ Instructions: Include the to-title-case.js script and use the new .toTitleCase()
 
 ## License
 
-To Title Case 2.0 – http://individed.com/code/to-title-case/
+To Title Case 2.0 – http://individed.com/code/to-title-case/  
 Copyright © 2008–2012 David Gouch. Licensed under the MIT License. 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
