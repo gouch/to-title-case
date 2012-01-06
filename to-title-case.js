@@ -1,26 +1,22 @@
 ﻿/* 
- * To Title Case 1.2 – http://individed.com/code/to-title-case/
- * Copyright © 2008–2011 David Gouch. Licensed under the MIT License. 
+ * To Title Case 2.0 – http://individed.com/code/to-title-case/
+ * Copyright © 2008–2012 David Gouch. Licensed under the MIT License. 
  */
 
 String.prototype.toTitleCase = function() {
-    var littleWords = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via) /i;
+  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via)$/i;
 
-    return this.replace(/([^\s\-]+ *)/g, function(match, p1, index, title) {
-        if (match.search(littleWords) > -1 && index > 1 && title.charAt(index - 2) !== ":") {
-            console.log('[1] match: %s; p1: %s; index: %s; title: %s', match, p1, index, title);
-            return match.toLowerCase();
-        }
-        if (title.substring(index - 1, index + 1).search(/[^\w- ]|_/) > -1) {
-            console.log('[2] match: %s;index: %s; title: %s', match, index, title);
-            return match.charAt(0) + match.charAt(1).toUpperCase() + match.substr(2);
-        }
-        if (match.substr(1).search(/[A-Z]|\w+\.+\w/) > -1) {
-            console.log('[3] match: %s;index: %s; title: %s', match, index, title);
-            return match;
-        }
+  return this.replace(/([^\W_]+[^\s-]*) */g, function(match, p1, index, title) {
+    if (index > 0 && index + p1.length !== title.length &&
+      p1.search(smallWords) > -1 && title[index - 2] !== ":" && 
+      title[index - 1].search(/[^\s-]/) < 0) {
+      return match.toLowerCase();
+    }
 
-        console.log('[4] match: %s;index: %s; title: %s', match, index, title);
-        return match.charAt(0).toUpperCase() + match.substr(1);
-    });
+    if (p1.substr(1).search(/[A-Z]|\../) > -1) {
+      return match;
+    }
+
+    return match.charAt(0).toUpperCase() + match.substr(1);
+  });
 };
