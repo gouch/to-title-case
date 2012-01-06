@@ -1,98 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>To Title Case Tests</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="../to-title-case.js"></script>
     <style>
-        body {
-            font: 15px "Inconsolata", "Menlo", "Consolas", monospace;
-        }
+      body {
+        font: 14px menlo, consolas, monospace;
+      }
     </style>
-</head>
+  </head>
 <body>
-    <script>
-        var titles = [
-            ["a thing", 
-                "A Thing"],
-            ['"Nothing to Be Afraid Of?"', 
-                '"Nothing to Be Afraid Of?"'],
-            ['"Nothing to Be Afraid of?"', 
-                '"Nothing to Be Afraid Of?"'],
-            ['Sub-phrase with a small word in quotes: "a trick, perhaps?"',
-                'Sub-Phrase With a Small Word in Quotes: "A Trick, Perhaps?"'],
-            ["Sub-phrase with a small word in quotes: 'a trick, perhaps?'",
-                "Sub-Phrase With a Small Word in Quotes: 'A Trick, Perhaps?'"],
-            ["Starting sub-phrase with a small word: a trick, perhaps?",
-                "Starting Sub-Phrase With a Small Word: A Trick, Perhaps?"],
-            ["Small word at end is nothing to be afraid of",
-                "Small Word at End Is Nothing to Be Afraid Of"],
-            ["'by the way, small word at the start but within quotes.'",
-                "'By the Way, Small Word at the Start but Within Quotes.'"],
-            ["The SEC's Apple probe: what you need to know",
-                "The SEC's Apple Probe: What You Need to Know"],
-            ["this vs. that",
-                "This vs. That"],
-            ["this v. that",
-                "This v. That"],
-            ["this vs that",
-                "This vs That"],
-            ["this v that",
-                "This v That"],
-            ["Apple deal with AT&T falls through",
-                "Apple Deal With AT&T Falls Through"],
-            ["What is AT&T's problem?",
-                "What Is AT&T's Problem?"],
-            ["Q&A with Steve Jobs: 'That's what happens in technology'",
-                "Q&A With Steve Jobs: 'That's What Happens in Technology'"],
-            ["Read markdown_rules.txt to find out how _underscores around words_ will be interpretted",
-                "Read markdown_rules.txt to Find Out How _Underscores Around Words_ Will Be Interpretted"],
-            ["Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event",
-                "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"],
-            ["BlackBerry vs. iPhone",
-                "BlackBerry vs. iPhone"],
-            ["Scott Moritz and TheStreet.com’s million iPhone la-la land",
-                "Scott Moritz and TheStreet.com’s Million iPhone La-La Land"],
-            ["People probably won't put http://foo.com/bar/ in titles",
-                "People Probably Won't Put http://foo.com/bar/ in Titles"],
-            ["your hair[cut] looks (nice)",
-                "Your Hair[cut] Looks (Nice)"],
-            ["Have you read “The Lottery”?",
-                "Have You Read “The Lottery”?"],
-            ["2lmc Spool: 'Gruber on OmniFocus and Vapo(u)rware'",
-                "2lmc Spool: 'Gruber on OmniFocus and Vapo(u)rware'"],
-            ["For step-by-step directions email someone@example.com",
-              "For Step-by-Step Directions Email someone@example.com"]
-          ];
+  <script>
+    /* data */
 
-        runTests(titles);
-        
-        function print(str) {
-            document.write(str + '<br>');
+    var titles = [
+      {input: "A For By Of", expects: "A for by Of"},
+      {input: "follow step-by-step instructions", expects: "Follow Step-by-Step Instructions"},
+      {input: "this sub-phrase is nice", expects: "This Sub-Phrase Is Nice"},
+      {input: "catchy title: a subtitle", expects: "Catchy Title: A Subtitle"},
+      {input: 'catchy title: "a quoted subtitle"', expects: 'Catchy Title: "A Quoted Subtitle"'},
+      {input: 'catchy title: “‘a twice quoted subtitle’”', expects: 'Catchy Title: “‘A Twice Quoted Subtitle’”'},
+      {input: '"a title inside double quotes"', expects: '"A Title Inside Double Quotes"'},
+      {input: "all words capitalized", expects: "All Words Capitalized"},
+      {input: "small words the lowercase", expects: "Small Words the Lowercase"},
+      {input: "a small word starts", expects: "A Small Word Starts"},
+      {input: "do questions work?", expects: "Do Questions Work?"},
+      {input: "multiple sentences. more than one.", expects: "Multiple Sentences. More Than One."},
+      {input: "Ends with small word of", expects: "Ends With Small Word Of"},
+      {input: '"title inside double quotes"', expects: '"Title Inside Double Quotes"'},
+      {input: 'double quoted "inner" word', expects: 'Double Quoted "Inner" Word'},
+      {input: "single quoted 'inner' word", expects: "Single Quoted 'Inner' Word"},
+      {input: "fancy double quoted “inner” word", expects: "Fancy Double Quoted “Inner” Word"},
+      {input: "fancy single quoted ‘inner’ word", expects: "Fancy Single Quoted ‘Inner’ Word"},
+      {input: "this vs. that", expects: "This vs. That"},
+      {input: "this vs that", expects: "This vs That"},
+      {input: "this v. that", expects: "This v. That"},
+      {input: "this v that", expects: "This v That"},
+      {input: "address email@example.com titles", expects: "Address email@example.com Titles"},
+      {input: "pass camelCase through", expects: "Pass camelCase Through"},
+      {input: "don't break", expects: "Don't Break"},
+      {input: "catchy title: substance subtitle", expects: "Catchy Title: Substance Subtitle"},
+      {input: "we keep NASA capitalized", expects: "We Keep NASA Capitalized"},
+      {input: "leave Q&A unscathed", expects: "Leave Q&A Unscathed"},
+      {input: "Scott Moritz and TheStreet.com’s million iPhone la-la land", expects: "Scott Moritz and TheStreet.com’s Million iPhone La-La Land"},
+      {input: "you have a http://example.com/foo/ title", expects: "You Have a http://example.com/foo/ Title"},
+      {input: "your hair[cut] looks (nice)", expects: "Your Hair[cut] Looks (Nice)"},
+      {input: "keep that colo(u)r", expects: "Keep That Colo(u)r"},
+      {input: "have you read “The Lottery”?", expects: "Have You Read “The Lottery”?"},
+      {input: "Read markdown_rules.txt to find out how _underscores around words_ will be interpretted", expects: "Read markdown_rules.txt to Find Out How _Underscores Around Words_ Will Be Interpretted"},
+      {input: "Read markdown_rules.txt to find out how *asterisks around words* will be interpretted", expects: "Read markdown_rules.txt to Find Out How *Asterisks Around Words* Will Be Interpretted"},
+      {input: "Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event", expects: "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"}
+    ];
+
+    /* functions */
+
+    function print(str) {
+      document.write(str + '<br>');
+    }
+
+    function runTests(tests) {
+      var testsTotal = tests.length;
+      var testsFailed = 0;
+      var tab = '&nbsp;&nbsp;&nbsp;&nbsp;';
+
+      for (var i=0; i<testsTotal; i++) {
+        if (tests[i].input.toTitleCase() !== tests[i].expects) {
+          print('Test ' + (i + 1) + ' failure:');
+          print(tab + 'inputed: ' + tests[i].input);
+          print(tab + 'expects: ' + tests[i].expects);
+          print(tab + 'returns: ' + tests[i].input.toTitleCase());
+
+          testsFailed++;
         }
+      }
 
-        function runTests(tests) {
-            var testsTotal = tests.length;
-            var testsFailed = 0;
-            var tab = '&nbsp;&nbsp;&nbsp;&nbsp;';
+      if (!testsFailed) {
+        print('All tests passed.');
+      }
+    }
 
-            for (var i=0; i<testsTotal; i++) {
-                if (tests[i][0].toTitleCase() !== tests[i][1]) {
-                    print('Test ' + i + ' failure:');
-                    print(tab + 'inputed: ' + tests[i][0]);
-                    print(tab + 'expects: ' + tests[i][1]);
-                    print(tab + 'returns: ' + tests[i][0].toTitleCase());
+    /* action */
 
-                    testsFailed++;
-                }
-            }
-
-            if (!testsFailed) {
-                print('All tests passed.');
-            }
-        }
-    </script>
+    runTests(titles);
+  </script>
 </body>
 </html>
-
