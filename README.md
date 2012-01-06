@@ -3,6 +3,10 @@
 Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
 
 ## History
+### 2.0.1 / 2012-01-06
+
+- Fixed IE 7 breakage introduced in 2.0. Don't treat strings like character arrays.
+
 ### 2.0 / 2012-01-06
 
 - 15% less code and 35% easier to understand.

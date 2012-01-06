@@ -1,5 +1,5 @@
 ﻿/* 
- * To Title Case 2.0 – http://individed.com/code/to-title-case/
+ * To Title Case 2.0.1 – http://individed.com/code/to-title-case/
  * Copyright © 2008–2012 David Gouch. Licensed under the MIT License. 
  */
 
