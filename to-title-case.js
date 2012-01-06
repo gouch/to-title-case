@@ -8,8 +8,8 @@ String.prototype.toTitleCase = function () {
 
   return this.replace(/([^\W_]+[^\s-]*) */g, function (match, p1, index, title) {
     if (index > 0 && index + p1.length !== title.length &&
-      p1.search(smallWords) > -1 && title[index - 2] !== ":" && 
-      title[index - 1].search(/[^\s-]/) < 0) {
+      p1.search(smallWords) > -1 && title.charAt(index - 2) !== ":" && 
+      title.charAt(index - 1).search(/[^\s-]/) < 0) {
       return match.toLowerCase();
     }
 
