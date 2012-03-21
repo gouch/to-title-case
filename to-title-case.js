@@ -4,7 +4,7 @@
  */
 
 String.prototype.toTitleCase = function () {
-  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via)$/i;
+  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|into|of|on|or|the|to|vs?\.?|via)$/i;
 
   return this.replace(/([^\W_]+[^\s-]*) */g, function (match, p1, index, title) {
     if (index > 0 && index + p1.length !== title.length &&
