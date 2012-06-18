@@ -10,17 +10,9 @@ String.prototype.toTitleCase = function () {
 
   userWords = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
 
-  if (userWords.length) {
-    var tmp = '^(';
-    for (i = 0; i < userwords.length) {
-      tmp += userWords[i];
-    }
-    tmp += ')$'
-    smallWords = new RegExp(tmp, 'i');
-    delete tmp;
+  if (userWords.length > 0) {
+    smallWords = new RegExp('^(' + userWords.join('|') + ')$' , 'i');
   }
-  delete userWords;
-  delete __slice;
 
   return this.replace(/([^\W_]+[^\s-]*) */g, function (match, p1, index, title) {
     if (index > 0 && index + p1.length !== title.length &&

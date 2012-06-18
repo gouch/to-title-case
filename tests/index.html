@@ -76,6 +76,22 @@
         }
       }
 
+      for (var i=0; i<testsTotal; i++) {
+        if (tests[i].input.toTitleCase('a', 'an', 'and', 'as', 'at', 'but',
+            'by', 'en', 'for', 'if', 'in', 'of', 'on', 'or', 'the', 'to',
+            'vs?\.?', 'via') !== tests[i].expects) {
+          print('Test ' + (i + 1) + ' failure:');
+          print(tab + 'inputed: ' + tests[i].input);
+          print(tab + 'expects: ' + tests[i].expects);
+          print(tab + 'returns: ' + tests[i].input.toTitleCase('a', 'an', 'and', 'as', 'at', 'but',
+          'by', 'en', 'for', 'if', 'in', 'of', 'on', 'or', 'the', 'to',
+          'vs?\.?', 'via'));
+
+          testsFailed++;
+        }
+      }
+      
+
       if (!testsFailed) {
         print('All tests passed.');
       }
