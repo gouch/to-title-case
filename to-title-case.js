@@ -1,10 +1,26 @@
-﻿/* 
+/* 
  * To Title Case 2.0.1 – http://individed.com/code/to-title-case/
  * Copyright © 2008–2012 David Gouch. Licensed under the MIT License. 
  */
 
 String.prototype.toTitleCase = function () {
-  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via)$/i;
+  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via)$/i,
+      __slice = [].slice,
+      userWords;
+
+  userWords = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+
+  if (userWords.length) {
+    var tmp = '^(';
+    for (i = 0; i < userwords.length) {
+      tmp += userWords[i];
+    }
+    tmp += ')$'
+    smallWords = new RegExp(tmp, 'i');
+    delete tmp;
+  }
+  delete userWords;
+  delete __slice;
 
   return this.replace(/([^\W_]+[^\s-]*) */g, function (match, p1, index, title) {
     if (index > 0 && index + p1.length !== title.length &&
@@ -20,3 +36,4 @@ String.prototype.toTitleCase = function () {
     return match.charAt(0).toUpperCase() + match.substr(1);
   });
 };
+
