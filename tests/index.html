@@ -51,8 +51,18 @@
       {input: "have you read “The Lottery”?", expects: "Have You Read “The Lottery”?"},
       {input: "Read markdown_rules.txt to find out how _underscores around words_ will be interpretted", expects: "Read markdown_rules.txt to Find Out How _Underscores Around Words_ Will Be Interpretted"},
       {input: "Read markdown_rules.txt to find out how *asterisks around words* will be interpretted", expects: "Read markdown_rules.txt to Find Out How *Asterisks Around Words* Will Be Interpretted"},
-      {input: "Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event", expects: "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"}
-    ];
+      {input: "Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event", expects: "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"},
+      
+      // Notice that words which have an uppercase letter retain their case, regardless of whether they "should" have had any upper case letters in them to begin with:
+      // This can be a very good thing:
+      {input: "I watched CNN before landing at JFK", expects: "I Watched CNN Before Landing at JFK"},
+      // But it can sometimes be bad
+      {input: "hello WORLD", expects: "Hello World"},
+      {input: "hello woRld", expects: "Hello woRld"},
+      {input: "I LOVE CAPS LOCK!", expects: "I LOVE CAPS LOCK!"},
+      // An extreme case (see smallWords if you're confused by this):
+      {input: "HERE IS A DOG", expects: "HERE IS a DOG"},      
+];
 
     /* functions */
 
