@@ -3,6 +3,11 @@
 Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
 
 ## History
+### 2.1 / 2013-11-03
+- Acknowledge characters outside of US-ASCII
+- Fix bug related to hyphenated small words
+- Replace baby's first testing script with the QUnit framework
+
 ### 2.0.1 / 2012-01-06
 
 - Fixed IE 7 breakage introduced in 2.0. Don't treat strings like character arrays.
@@ -16,8 +21,7 @@ Instructions: Include the to-title-case.js script and use the new .toTitleCase()
 
 ## License
 
-To Title Case 2.0 – http://individed.com/code/to-title-case/  
-Copyright © 2008–2012 David Gouch. Licensed under the MIT License. 
+Copyright © 2008–2013 David Gouch. Licensed under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
