@@ -2,6 +2,8 @@
 
 Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
 
+The script assumes input is either sentence case (e.g. _To title case for JavaScript_) or every-word title case (e.g. _To Title Case For JavaScript_). In both cases, the script will return the corrected text _To Title Case for JavaScript_.
+
 ## History
 ### 2.1 / 2013-11-03
 - Acknowledge characters outside of US-ASCII
