@@ -1,0 +1,22 @@
+{
+  "name": "to-title-case",
+  "version": "1.0.0",
+  "description": "Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.",
+  "main": "to-title-case.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gouch/to-title-case.git"
+  },
+  "author": "David Gouch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gouch/to-title-case/issues"
+  },
+  "homepage": "https://github.com/gouch/to-title-case#readme"
+}
