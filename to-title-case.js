@@ -4,7 +4,7 @@
  */
 
 String.prototype.toTitleCase = function(){
-  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via|du|des|de|à|avec|chez|dans|dès|en|par|pour|sans|sous|sur|vers|au)$/i;
 
   return this.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title){
     if (index > 0 && index + match.length !== title.length &&
