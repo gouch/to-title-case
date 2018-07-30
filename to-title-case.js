@@ -1,8 +1,6 @@
-/*! To Title Case | https://github.com/gouch/to-title-case
-  * Copyright 2008–2018 David Gouch | MIT License */
+/* To Title Case | https://github.com/gouch/to-title-case | Copyright 2008–2018 David Gouch | MIT License */
 
-// eslint-disable-next-line no-extend-native
-String.prototype.toTitleCase = function () {
+function toTitleCase () {
   'use strict'
   var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|v.?|vs.?|via)$/i
   var alphanumericPattern = /([A-Za-z0-9\u00C0-\u00FF])/
@@ -32,3 +30,6 @@ String.prototype.toTitleCase = function () {
     })
   }).join('')
 }
+
+// eslint-disable-next-line no-extend-native
+String.prototype.toTitleCase = toTitleCase

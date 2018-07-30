@@ -1,26 +1,27 @@
 # To Title Case for JavaScript
+Instructions: Include to-title-case.js using your preferred method. You can now use the `.toTitleCase()` method on the string you want converted to title case.
 
-Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
-
-The script assumes input is either sentence case (e.g. _To title case for JavaScript_) or every-word title case (e.g. _To Title Case For JavaScript_). In both cases, the script will return the corrected text _To Title Case for JavaScript_.
+The script assumes input is either sentence case (e.g. *To title case for JavaScript*) or every-word title case (e.g. *To Title Case For JavaScript*). In both cases, the script will return the corrected text *To Title Case for JavaScript*.
 
 ## The Rules
 1. By default, capitalize all words
 2. Always capitalize the first and last word in titles and subtitles
 3. Lowercase articles: a, an, the
-4. Lowercase injunctions: and, but, for, or, nor,
+4. Lowercase injunctions: and, but, for, or, nor
 5. Lowercase: to, as
 6. [hyphens]
 7. why these?: at, by, en, if, in, on, per, v., vs., via
+8. Let intentional capitalization stand
 
-Some style guides have special cases for prepositions: these largely rely on grammatically understanding, which is beyond the scope of this script
+Some style guides have special cases for prepositions. These largely rely on grammatically understanding, which is beyond the scope of this script
 
 ## History
-### 3.0 / 2017-02-??
-- Rewrite to use `split` instead of `replace` — this simplifies the reasoning
+### 2.2 / 2018-06-??
+- BREAKING CHANGE: If your title contains a full URL, the `http:` portion will now be treated like a normal word (i.e. capitalized). If you relied on the old behavior, well, that would surprise me, but let me know.
+- Rewrite to use `split` instead of `replace` — this simplifies the reasoning
 - Reorganize some project files
 - Document the actual headline casing rules of the script
-- BREAKING CHANGE: the `http:` portion of URLs will be capitalized
+- Made prototype modification easier to ignore
 
 ### 2.1 / 2013-11-03
 - Acknowledge characters outside of US-ASCII
