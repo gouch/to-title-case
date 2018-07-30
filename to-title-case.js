@@ -30,6 +30,11 @@ function toTitleCase () {
         return current
       }
 
+      /* Ignore URLs */
+      if (array[index + 1] === ':' && array[index + 2] !== '') {
+        return current
+      }
+
       /* Capitalize the first letter */
       return current.replace(alphanumericPattern, function (match) {
         return match.toUpperCase()

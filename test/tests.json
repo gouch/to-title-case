@@ -175,6 +175,10 @@
       "expect": "Email email@example.com Address"
     },
     {
+      "input": "you have an https://example.com/ title",
+      "expect": "You Have an https://example.com/ Title"
+    },
+    {
       "input": "_underscores around words_",
       "expect": "_Underscores Around Words_"
     },
