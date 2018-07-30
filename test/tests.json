@@ -9,10 +9,8 @@
       "expect": "One Two Three"
     },
     {
-      "input":
-        "Start a an and as at but by en for if in nor of on or per the to v vs via end",
-      "expect":
-        "Start a an and as at but by en for if in nor of on or per the to v vs via End"
+      "input": "Start a an and as at but by en for if in nor of on or per the to v vs via end",
+      "expect": "Start a an and as at but by en for if in nor of on or per the to v vs via End"
     },
     {
       "input": "a small word starts",
@@ -213,10 +211,8 @@
       "expect": "Scott Moritz and TheStreet.com’s Million iPhone La-La Land"
     },
     {
-      "input":
-        "Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event",
-      "expect":
-        "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"
+      "input": "Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event",
+      "expect": "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"
     }
   ]
 }
