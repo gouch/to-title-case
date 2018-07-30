@@ -5,7 +5,7 @@
   "author": "David Gouch",
   "private": true,
   "devDependencies": {
-    "qunit": "^2.5.0",
+    "qunit": "^2.6.1",
     "standard": "^10.0.3"
   },
   "license": "MIT",
