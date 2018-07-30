@@ -12,5 +12,6 @@
   "repository": "github:gouch/to-title-case",
   "scripts": {
     "test": "standard && qunit test"
-  }
+  },
+  "eslintConfig": {}
 }
