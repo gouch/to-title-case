@@ -217,6 +217,10 @@
     {
       "input": "Notes and observations regarding Apple’s announcements from ‘The Beat Goes On’ special event",
       "expect": "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"
+    },
+    {
+      "input": "2018",
+      "expect": "2018"
     }
   ]
 }
