@@ -7,8 +7,7 @@ String.prototype.toTitleCase = function () {
   var alphanumericPattern = /([A-Za-z0-9\u00C0-\u00FF])/
   var wordSeparators = /([ :–—-])/
 
-  return this.toString()
-    .split(wordSeparators)
+  return this.split(wordSeparators)
     .map(function (current, index, array) {
       if (
         /* Check for small words */
