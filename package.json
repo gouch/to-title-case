@@ -5,8 +5,8 @@
   "author": "David Gouch",
   "private": true,
   "devDependencies": {
-    "qunit": "^2.6.1",
-    "standard": "^10.0.3"
+    "qunit": "^2.6.0",
+    "standard": "^11.0.0"
   },
   "license": "MIT",
   "repository": "github:gouch/to-title-case",
