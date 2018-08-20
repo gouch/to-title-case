@@ -12,32 +12,6 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/qunit@2.6.1/qunit/qunit.js"></script> 
   <script src="../to-title-case.js"></script> 
-  <script>
-
-    var tests = jQuery.getJSON('tests.json').done(run)
-
-    function run(data) {
-      var tests = data
-
-      var testGroups = [
-        'general',
-        'hyphens',
-        'punctuation',
-        'quotes',
-        'subtitles',
-        'technical',
-        'versus',
-        'miscellaneous'
-      ]
-
-      testGroups.forEach(function (groupName) {
-        tests[groupName].forEach(function (test) {
-          QUnit.test(groupName, function (assert) {
-            assert.equal(test.input.toTitleCase(), test.expect)
-          })
-        })
-      })
-    }
-  </script>
+  <script src="index.js"></script> 
 </body>
 </html>
