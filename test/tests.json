@@ -12,6 +12,10 @@
     "expect": "Catchy Title: A Subtitle"
   },
   {
+    "input": "catchy title - a subtitle",
+    "expect": "Catchy Title - A Subtitle"
+  },
+  {
     "input": "catchy title: \"a quoted subtitle\"",
     "expect": "Catchy Title: \"A Quoted Subtitle\""
   },
