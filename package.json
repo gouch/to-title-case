@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "repository": "github:gouch/to-title-case",
+  "main": "to-title-case.js",
   "scripts": {
     "test": "standard && qunit test"
   },
