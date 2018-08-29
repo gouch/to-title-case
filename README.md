@@ -52,7 +52,7 @@ If you brute forced that into title case, you'd wind up with _Peta_ and _Tx_, wh
 
 ## History/Changelog
 
-### 2.2 / 2018-08-??
+### 2.2 / 2018-08-28
 
 - Rewrite to use `split` instead of `replace`. This makes it easier to follow what the script is doing.
 - Add additional tests
