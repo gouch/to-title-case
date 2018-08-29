@@ -1,11 +1,65 @@
 # To Title Case for JavaScript
 
-Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
+Intelligently format your headlines into title case.
 
-The script assumes input is either sentence case (e.g. _To title case for JavaScript_) or every-word title case (e.g. _To Title Case For JavaScript_). In both cases, the script will return the corrected text _To Title Case for JavaScript_.
+## Usage
 
-## History
+Include `to-title-case.js` in your script or page using your preferred method. You can now use the `.toTitleCase()` method on strings you want converted to title case:
+
+```js
+'Make me a headline'.toTitleCase() // returns: Make Me a Headline
+```
+
+The script assumes input is either sentence case (e.g. _To title case for JavaScript_) or every-word “title case” (e.g. _To Title Case For JavaScript_). In both cases, the script will convert the text to _To Title Case for JavaScript_.
+
+## What is Title Case?
+
+Title case (or headline case) is a convention for formatting the titles of things. It’s often used for the title of articles, but also matters if you mention the title of something in paragraph.
+
+### The Capitalization Rules
+
+1. By default, capitalize all words
+2. Always capitalize the first and last word in titles and subtitles
+3. Capitalize both parts of hyphenated words
+4. Lowercase articles: a, an, the
+5. Lowercase conjunctions: and, but, or, nor
+6. Lowercase short prepositions: as, at, by, for, in, of, on, per, to, via
+7. Lowercase versus: vs., vs, v., v
+7. Lowercase NYT words*: en, if
+8. Let intentional capitalization stand
+
+These rules are based on style guides from APA, Chicago, and modern conventions. The result will match general expectations for what a title should look like. Some style guides might state special rules depending on contextual use, but these decisions rely on grammatical understanding, which is beyond the scope of a small script. Your titles will at least be consistent.
+
+<p><small>
+* Treating these as small words was inherited from Gruber's implementation. They're likely based on New York Times style. Opinions are welcome on whether these should be removed in a future version.
+</small></p>
+
+## FAQ: Dealing With Uppercase and ALL CAPS Input
+
+If you’re stuck with uppercase input, you can get to title case by changing to lowercase first:
+
+```js
+'CAPSLOCK FOREVER'.toLowerCase().toTitleCase() // returns: Capslock Forever
+
+// Don’t actually do this until you read the notes below!
+```
+
+Think hard before doing this! As frustrating as all uppercase input can be, acronyms are very common. Turning genuine abbreviations into blatant typos is a worse look than all caps. As an example, this was a real headline from CNN:
+
+> PETA: Turkey, TX, change your name
+
+If you brute forced that into title case, you'd wind up with _Peta_ and _Tx_, which would make Cnn look pretty amateur.
+
+## History/Changelog
+
+### 2.2 / 2018-08-28
+
+- Rewrite to use `split` instead of `replace`. This makes it easier to follow what the script is doing.
+- Add additional tests
+- Document the actual rules used
+
 ### 2.1 / 2013-11-03
+
 - Acknowledge characters outside of US-ASCII
 - Fix bug related to hyphenated small words
 - Replace baby's first testing script with the QUnit framework
@@ -21,25 +75,6 @@ The script assumes input is either sentence case (e.g. _To title case for JavaSc
 - Test titles rewritten to focus on a single issue per title.
 - More braces to make style guides and JSLint happier.
 
-## License
+## Inspiration
 
-Copyright © 2008–2013 David Gouch. Licensed under the MIT License.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
+I built this after reading [John Gruber’s explanation of title case](https://daringfireball.net/2008/05/title_case).
