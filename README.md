@@ -25,8 +25,8 @@ Title case (or headline case) is a convention for formatting the titles of thing
 5. Lowercase conjunctions: and, but, or, nor
 6. Lowercase short prepositions: as, at, by, for, in, of, on, per, to, via
 7. Lowercase versus: vs., vs, v., v
-7. Lowercase NYT words*: en, if
-8. Let intentional capitalization stand
+8. Lowercase NYT words\*: en, if
+9. Let intentional capitalization stand
 
 These rules are based on style guides from APA, Chicago, and modern conventions. The result will match general expectations for what a title should look like. Some style guides might state special rules depending on contextual use, but these decisions rely on grammatical understanding, which is beyond the scope of a small script. Your titles will at least be consistent.
 
