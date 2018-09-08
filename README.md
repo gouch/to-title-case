@@ -2,9 +2,14 @@
 
 Intelligently format your headlines into title case.
 
+## Installation
+
+- Browser: Add the script to your page with something like `<script src="to-title-case.js"></script>`
+- Node: `npm install @gouch/to-title-case` and then add `require('@gouch/to-title-case')` to your script
+
 ## Usage
 
-Include `to-title-case.js` in your script or page using your preferred method. You can now use the `.toTitleCase()` method on strings you want converted to title case:
+Use the `.toTitleCase()` method on strings you want converted to title case:
 
 ```js
 'Make me a headline'.toTitleCase() // returns: Make Me a Headline
@@ -51,6 +56,10 @@ Think hard before doing this! As frustrating as all uppercase input can be, acro
 If you brute forced that into title case, you'd wind up with _Peta_ and _Tx_, which would make Cnn look pretty amateur.
 
 ## History/Changelog
+
+### 2.2.1 / 2018-09-07
+
+- Publish to npm
 
 ### 2.2 / 2018-08-28
 
