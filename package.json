@@ -1,7 +1,7 @@
 {
   "name": "@gouch/to-title-case",
   "description": "A JavaScript method for intelligently converting strings to title case",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "author": "David Gouch",
   "devDependencies": {
     "qunit": "^2.6.0",
