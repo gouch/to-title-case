@@ -17,6 +17,18 @@ Use the `.toTitleCase()` method on strings you want converted to title case:
 
 The script assumes input is either sentence case (e.g. _To title case for JavaScript_) or every-word “title case” (e.g. _To Title Case For JavaScript_). In both cases, the script will convert the text to _To Title Case for JavaScript_.
 
+### Get TypeScript typings
+
+Create a file `string.d.ts` at the root of your project with the following content:
+
+```ts 
+declare interface String {
+  toTitleCase(): string;
+}
+```
+
+The name of the file does not matter, but it needs to have `.d.ts` in its end.
+
 ## What is Title Case?
 
 Title case (or headline case) is a convention for formatting the titles of things. It’s often used for the title of articles, but also matters if you mention the title of something in paragraph.
