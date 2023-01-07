@@ -1,11 +1,11 @@
-/* To Title Case © 2018 David Gouch | https://github.com/gouch/to-title-case */
+/* To Title Case © 2023 David Gouch | https://github.com/gouch/to-title-case */
 
 // eslint-disable-next-line no-extend-native
 String.prototype.toTitleCase = function () {
   'use strict'
   var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|v.?|vs.?|via)$/i
   var alphanumericPattern = /([A-Za-z0-9\u00C0-\u00FF])/
-  var wordSeparators = /([ :–—-])/
+  var wordSeparators = /([ \u00A0:–—-])/
 
   return this.split(wordSeparators)
     .map(function (current, index, array) {
@@ -26,7 +26,7 @@ String.prototype.toTitleCase = function () {
       }
 
       /* Ignore intentional capitalization */
-      if (current.substr(1).search(/[A-Z]|\../) > -1) {
+      if (current.slice(1).search(/[A-Z]|\../) > -1) {
         return current
       }
 
