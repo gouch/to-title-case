@@ -89,24 +89,28 @@
       "expect": "Piña Colada While You Listen to Ænima"
     },
     {
-      "input": "start title – end title",
-      "expect": "Start Title – End Title"
+      "input": "start title \u2013 end title",
+      "expect": "Start Title \u2013 End Title"
     },
     {
-      "input": "start title–end title",
-      "expect": "Start Title–End Title"
+      "input": "start title\u2013end title",
+      "expect": "Start Title\u2013End Title"
     },
     {
-      "input": "start title — end title",
-      "expect": "Start Title — End Title"
+      "input": "start title \u2014 end title",
+      "expect": "Start Title \u2014 End Title"
     },
     {
-      "input": "start title—end title",
-      "expect": "Start Title—End Title"
+      "input": "start title\u2014end title",
+      "expect": "Start Title\u2014End Title"
     },
     {
       "input": "start title - end title",
       "expect": "Start Title - End Title"
+    },
+    {
+      "input": "start title-end title",
+      "expect": "Start Title-End Title"
     }
   ],
   "quotes": [
@@ -203,6 +207,52 @@
     {
       "input": "this v that",
       "expect": "This v That"
+    }
+  ],
+  "no-break-spaces": [
+    {
+      "input": "one\u00A0two",
+      "expect": "One\u00A0Two"
+    },
+    {
+      "input": "one\u00A0two\u00A0three",
+      "expect": "One\u00A0Two\u00A0Three"
+    },
+    {
+      "input": "Start\u00A0a\u00A0an\u00A0and\u00A0as\u00A0at\u00A0but\u00A0by\u00A0en\u00A0for\u00A0if\u00A0in\u00A0nor\u00A0of\u00A0on\u00A0or\u00A0per\u00A0the\u00A0to\u00A0v\u00A0vs\u00A0via\u00A0end",
+      "expect": "Start\u00A0a\u00A0an\u00A0and\u00A0as\u00A0at\u00A0but\u00A0by\u00A0en\u00A0for\u00A0if\u00A0in\u00A0nor\u00A0of\u00A0on\u00A0or\u00A0per\u00A0the\u00A0to\u00A0v\u00A0vs\u00A0via\u00A0End"
+    },
+    {
+      "input": "a\u00A0small\u00A0word\u00A0starts",
+      "expect": "A\u00A0Small\u00A0Word\u00A0Starts"
+    },
+    {
+      "input": "small word ends\u00A0on",
+      "expect": "Small Word Ends\u00A0On"
+    },
+    {
+      "input": "small\u00A0word\u00A0ends\u00A0on",
+      "expect": "Small\u00A0Word\u00A0Ends\u00A0On"
+    },
+    {
+      "input": "questions?",
+      "expect": "Questions?"
+    },
+    {
+      "input": "Two\u00A0questions?",
+      "expect": "Two\u00A0Questions?"
+    },
+    {
+      "input": "one\u00A0sentence. two\u00A0sentences.",
+      "expect": "One\u00A0Sentence. Two\u00A0Sentences."
+    },
+    {
+      "input": "we keep NASA\u00A0capitalized",
+      "expect": "We Keep NASA\u00A0Capitalized"
+    },
+    {
+      "input": "pass camelCase\u00A0through",
+      "expect": "Pass camelCase\u00A0Through"
     }
   ],
   "miscellaneous": [

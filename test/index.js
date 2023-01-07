@@ -7,6 +7,7 @@ function runTests (tests) {
     'subtitles',
     'technical',
     'versus',
+    'no-break-spaces',
     'miscellaneous'
   ]
 
