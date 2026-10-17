@@ -19,6 +19,7 @@ export function toTitleCase(str = '', options) {
   const dotted = /\.[\p{Letter}\P{Punctuation}]/u
   const hyphenated = /([-–])/u
   const proper = /\p{Letter}\p{Uppercase_Letter}+/u
+  const quoted = /^[“‘']|['’”]$/
   const separator = /([\p{Space_Separator}/—])/u
   const subtitle = /(:\p{Space_Separator})/u
   const technical = /[:@]|\p{Letter}\p{Number}|\p{Number}\p{Letter}/u
@@ -31,7 +32,7 @@ export function toTitleCase(str = '', options) {
     lowercase.includes(word.toLowerCase().match(/\p{Letter}+/gu)?.[0] || '') &&
     i !== 0 &&
     i !== arr.length - 1 &&
-    !/^[“‘]|[’”]$/.test(word)
+    !quoted.test(word)
       ? word.toLowerCase()
       : word.replace(/\p{Letter}/u, (letter) => letter.toUpperCase())
 
