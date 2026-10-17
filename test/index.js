@@ -1,18 +1,9 @@
-function runTests (tests) {
-  var testGroups = [
-    'general',
-    'hyphens',
-    'punctuation',
-    'quotes',
-    'subtitles',
-    'technical',
-    'versus',
-    'miscellaneous'
-  ]
+function runTests(tests) {
+  const testGroups = Object.keys(tests)
 
-  testGroups.forEach(function (groupName) {
-    tests[groupName].forEach(function (test) {
-      QUnit.test(groupName, function (assert) {
+  testGroups.forEach((groupName) => {
+    tests[groupName].forEach((test) => {
+      QUnit.test(groupName, (assert) => {
         assert.equal(test.input.toTitleCase(), test.expect)
       })
     })
@@ -23,7 +14,7 @@ function runTests (tests) {
 if (typeof window === 'undefined') {
   require('../to-title-case.js')
   var QUnit = require('qunit')
-  var tests = require('./tests.json')
+  const tests = require('./tests.json')
   runTests(tests)
 } else {
   /* globals jQuery */
