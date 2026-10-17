@@ -2,26 +2,20 @@
  * https://github.com/gouch/to-title-case */
 
 /**
- * @this {string | undefined}
+ * @this {string | void}
  * @param {string} str
- * @param {string | {lower: string[]}} [options]
+ * @param {{lowercase: string[]}} [options]
  * @returns {string}
  */
-export function toTitleCase(str, options) {
-  if (typeof this === 'string') {
-    options = str
-    str = this
-  }
+export function toTitleCase(str = '', options) {
+  /* back-compat for non-explicit prototype assignment */
+  str = typeof this === 'string' ? this : str
 
-  const lower =
-    typeof options === 'object'
-      ? options?.lower
-      : /* prettier-ignore */
-        [
-          'à', 'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for', 'if',
-          'in', 'nor', 'of', 'on', 'or', 'per', 'the', 'to', 'v', 'vs', 'via'
-        ]
-
+  /* prettier-ignore */
+  const lowercase = options?.lowercase || [
+    'à', 'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for', 'if', 'in',
+    'nor', 'of', 'on', 'or', 'per', 'the', 'to', 'v', 'vs', 'via'
+  ]
   const abbrev = /\.\P{Space_Separator}/u
   const hyphenated = /([-–])/u
   const name = /\p{Letter}\p{Uppercase_Letter}+/u
@@ -33,8 +27,8 @@ export function toTitleCase(str, options) {
    * @param {string} word @param {number} i @param {string[]} arr
    * @returns {string}
    */
-  const capitalize = (word, i, arr = []) =>
-    lower.includes(word.toLowerCase().match(/\p{Letter}+/gu)?.[0] || '') &&
+  const capitalize = (word, i, arr) =>
+    lowercase.includes(word.toLowerCase().match(/\p{Letter}+/gu)?.[0] || '') &&
     i !== 0 &&
     i !== arr.length - 1 &&
     !/^[“‘]|[’”]$/.test(word)

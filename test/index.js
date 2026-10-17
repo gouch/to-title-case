@@ -2,7 +2,10 @@ import { toTitleCase } from '../to-title-case.js'
 import tests from './tests.json' with { type: 'json' }
 
 const testGroups = Object.keys(tests)
-String.prototype.toTitleCase = toTitleCase
+
+String.prototype.toTitleCase = function (options) {
+  return toTitleCase(this, options)
+}
 
 QUnit.test('features', (assert) => {
   /* Prototype assignment */
