@@ -13,6 +13,10 @@
       "expect": "Start a an and as at but by en for if in nor of on or per the to v vs via End"
     },
     {
+      "input": "Start A An And As At But By En For If In Nor Of On Or Per The To V Vs Via End",
+      "expect": "Start a an and as at but by en for if in nor of on or per the to v vs via End"
+    },
+    {
       "input": "a small word starts",
       "expect": "A Small Word Starts"
     },
@@ -29,8 +33,32 @@
       "expect": "Two Questions?"
     },
     {
+      "input": "One sentence.",
+      "expect": "One Sentence."
+    },
+    {
+      "input": "one sentence. the sentence.",
+      "expect": "One Sentence. the Sentence."
+    },
+    {
       "input": "one sentence. two sentences.",
       "expect": "One Sentence. Two Sentences."
+    },
+    {
+      "input": "Be here at 9 a.m.",
+      "expect": "Be Here at 9 a.m."
+    },
+    {
+      "input": "Be here at 9 a.m. for your appt. with Dr. Alex E. Baranek",
+      "expect": "Be Here at 9 a.m. for Your Appt. With Dr. Alex E. Baranek"
+    },
+    {
+      "input": "with ellipsis... the rest.",
+      "expect": "With Ellipsis... the Rest."
+    },
+    {
+      "input": "with ellipsis… the rest.",
+      "expect": "With Ellipsis… the Rest."
     },
     {
       "input": "we keep NASA capitalized",
@@ -63,6 +91,10 @@
       "expect": "Start In-or-Out End"
     },
     {
+      "input": "start out-or-in end",
+      "expect": "Start Out-or-In End"
+    },
+    {
       "input": "start e-commerce end",
       "expect": "Start E-Commerce End"
     },
@@ -71,10 +103,41 @@
       "expect": "Start E-Mail End"
     }
   ],
+  "dashes": [
+    {
+      "comment": "Hyphen as dash",
+      "input": "start title - end title",
+      "expect": "Start Title - End Title"
+    },
+    {
+      "comment": "Em dash",
+      "input": "start title—end title",
+      "expect": "Start Title—End Title"
+    },
+    {
+      "comment": "Spaced em dash",
+      "input": "start title — end title",
+      "expect": "Start Title — End Title"
+    },
+    {
+      "comment": "Spaced en dash",
+      "input": "start title – end title",
+      "expect": "Start Title – End Title"
+    },
+    {
+      "comment": "En dash range",
+      "input": "start range–range end",
+      "expect": "Start Range–Range End"
+    }
+  ],
   "punctuation": [
     {
       "input": "your hair[cut] looks (nice)",
       "expect": "Your Hair[cut] Looks (Nice)"
+    },
+    {
+      "input": "The best (and the worst) this year",
+      "expect": "The Best (and the Worst) This Year"
     },
     {
       "input": "keep that colo(u)r",
@@ -85,28 +148,12 @@
       "expect": "Leave Q&A Unscathed"
     },
     {
+      "input": "start word & word end",
+      "expect": "Start Word & Word End"
+    },
+    {
       "input": "piña colada while you listen to ænima",
       "expect": "Piña Colada While You Listen to Ænima"
-    },
-    {
-      "input": "start title – end title",
-      "expect": "Start Title – End Title"
-    },
-    {
-      "input": "start title–end title",
-      "expect": "Start Title–End Title"
-    },
-    {
-      "input": "start title — end title",
-      "expect": "Start Title — End Title"
-    },
-    {
-      "input": "start title—end title",
-      "expect": "Start Title—End Title"
-    },
-    {
-      "input": "start title - end title",
-      "expect": "Start Title - End Title"
     }
   ],
   "quotes": [
@@ -145,6 +192,10 @@
     {
       "input": "have you read “The Lottery”?",
       "expect": "Have You Read “The Lottery”?"
+    },
+    {
+      "input": "\"Start a quoted sentence.\"",
+      "expect": "\"Start a Quoted Sentence.\""
     }
   ],
   "subtitles": [
@@ -169,14 +220,24 @@
       "expect": "One On: \"An End\""
     }
   ],
+  "names": [
+    {
+      "input": "Please meet Greg O’Leary",
+      "expect": "Please Meet Greg O’Leary"
+    },
+    {
+      "input": "Please meet Gregg O’leary",
+      "expect": "Please Meet Gregg O’leary"
+    }
+  ],
   "technical": [
     {
       "input": "email email@example.com address",
       "expect": "Email email@example.com Address"
     },
     {
-      "input": "you have an https://example.com/ title",
-      "expect": "You Have an https://example.com/ Title"
+      "input": "‘message:’ URLs in Leopard Mail",
+      "expect": "‘message:’ URLs in Leopard Mail"
     },
     {
       "input": "_underscores around words_",
@@ -185,6 +246,10 @@
     {
       "input": "*asterisks around words*",
       "expect": "*Asterisks Around Words*"
+    },
+    {
+      "input": "Written\u00A0with\u00A0the\u00A0no-break-space",
+      "expect": "Written\u00A0With\u00A0the\u00A0No-Break-Space"
     }
   ],
   "versus": [
@@ -197,11 +262,19 @@
       "expect": "This vs That"
     },
     {
+      "input": "this Vs. that",
+      "expect": "This vs. That"
+    },
+    {
       "input": "this v. that",
       "expect": "This v. That"
     },
     {
       "input": "this v that",
+      "expect": "This v That"
+    },
+    {
+      "input": "this V that",
       "expect": "This v That"
     }
   ],
@@ -211,6 +284,34 @@
       "expect": ""
     },
     {
+      "input": "2018",
+      "expect": "2018"
+    }
+  ],
+  "decisions": [
+    {
+      "comment": "Don’t try to divine what’s code versus prose",
+      "input": "WebKit Adds Support for ‘text-wrap: pretty’, Now Shipping in Safari Technology Preview",
+      "expect": "WebKit Adds Support for ‘Text-Wrap: Pretty’, Now Shipping in Safari Technology Preview"
+    },
+    {
+      "comment": "Style guide",
+      "input": "start if per end",
+      "expect": "Start if per End"
+    },
+    {
+      "comment": "Choose acronyms over undoing uppercase input",
+      "input": "AN EXAMPLE OF UPPERCASE INPUT",
+      "expect": "AN EXAMPLE OF UPPERCASE INPUT"
+    },
+    {
+      "comment": "Transforming urls is not worth the squeeze",
+      "input": "you have an https://example.com/sub-path title",
+      "expect": "You Have an https://example.com/Sub-Path Title"
+    }
+  ],
+  "headlines": [
+    {
       "input": "Scott Moritz and TheStreet.com’s million iPhone la-la land",
       "expect": "Scott Moritz and TheStreet.com’s Million iPhone La-La Land"
     },
@@ -219,8 +320,279 @@
       "expect": "Notes and Observations Regarding Apple’s Announcements From ‘The Beat Goes On’ Special Event"
     },
     {
-      "input": "2018",
-      "expect": "2018"
+      "input": "What lies ahead in the Middle East isn’t right vs. wrong. It’s right vs. right.",
+      "expect": "What Lies Ahead in the Middle East Isn’t Right vs. Wrong. It’s Right vs. Right."
+    },
+    {
+      "input": "Marthe Gautier, 96, Dies; Had Key Role in Down Syndrome Breakthrough",
+      "expect": "Marthe Gautier, 96, Dies; Had Key Role in Down Syndrome Breakthrough"
+    },
+    {
+      "input": "Are You There God? It’s Me, Margaret.",
+      "expect": "Are You There God? It’s Me, Margaret."
+    },
+    {
+      "input": "Capitalization vis-à-vis borrowed phrases",
+      "expect": "Capitalization Vis-à-Vis Borrowed Phrases"
+    },
+    {
+      "input": "Single-story a’s in very early versions of Macintosh System 1",
+      "expect": "Single-Story a’s in Very Early Versions of Macintosh System 1"
+    },
+    {
+      "input": "The new Siri remote (and updated Apple TV 4K)",
+      "expect": "The New Siri Remote (and Updated Apple TV 4K)"
+    },
+    {
+      "input": "Nutrition labels depend on the honor policy, and, surprisingly…",
+      "expect": "Nutrition Labels Depend on the Honor Policy, and, Surprisingly…"
+    },
+    {
+      "input": "Creating Ogg Theora files on Mac OS X With ffmpeg2theora",
+      "expect": "Creating Ogg Theora Files on Mac OS X With ffmpeg2theora"
+    },
+    {
+      "input": "Fleece, love and vomit: New Yorkers’ best (and worst) SantaCon stories",
+      "expect": "Fleece, Love and Vomit: New Yorkers’ Best (and Worst) SantaCon Stories"
+    },
+    {
+      "input": "‘Wake Up Dead Man’ | Anatomy of a Scene",
+      "expect": "‘Wake Up Dead Man’ | Anatomy of a Scene"
+    },
+    {
+      "input": "King Charles relays ‘good news’ about his cancer treatment",
+      "expect": "King Charles Relays ‘Good News’ About His Cancer Treatment"
+    },
+    {
+      "input": "Gonzo fans have made ‘Dungeon Crawler Carl’ into a global blockbuster",
+      "expect": "Gonzo Fans Have Made ‘Dungeon Crawler Carl’ Into a Global Blockbuster"
+    },
+    {
+      "input": "Thomas L. Friedman says we’re in a new epoch",
+      "expect": "Thomas L. Friedman Says We’re in a New Epoch"
+    },
+    {
+      "input": "Tech support scammers stole $85,000 from him",
+      "expect": "Tech Support Scammers Stole $85,000 From Him"
+    },
+    {
+      "input": "The New York Times News Quiz, Dec. 12, 2025",
+      "expect": "The New York Times News Quiz, Dec. 12, 2025"
+    },
+    {
+      "input": "U.S. helped to weaken report at U.N. environment talks, participants say",
+      "expect": "U.S. Helped to Weaken Report at U.N. Environment Talks, Participants Say"
+    }
+  ],
+  "df": [
+    {
+      "input": "a new system-wide UI look for iOS — let alone MacOS, too — would be a huge deal",
+      "expect": "A New System-Wide UI Look for iOS — Let Alone MacOS, Too — Would Be a Huge Deal"
+    },
+    {
+      "input": "Regarding — and, Well, Against — Substack",
+      "expect": "Regarding — and, Well, Against — Substack"
+    },
+    {
+      "input": "Disambiguating iPhone Model names that have the ‘S’ suffix",
+      "expect": "Disambiguating iPhone Model Names That Have the ‘S’ Suffix"
+    },
+    {
+      "input": "Ahead of season 1 finale, Apple has made the entire first episode of ‘Silo’ free — on Twitter",
+      "expect": "Ahead of Season 1 Finale, Apple Has Made the Entire First Episode of ‘Silo’ Free — on Twitter"
+    },
+    {
+      "input": "Proposed name for GM’s upcoming in-house software platform (you know, the one that isn’t going to support CarPlay): Edsel",
+      "expect": "Proposed Name for GM’s Upcoming In-House Software Platform (You Know, the One That Isn’t Going to Support CarPlay): Edsel"
+    },
+    {
+      "input": "The billions-dollar VR/AR headset question",
+      "expect": "The Billions-Dollar VR/AR Headset Question"
+    },
+    {
+      "input": "The D.O.J. goes after Google’s ‘Communicate With Care’ program",
+      "expect": "The D.O.J. Goes After Google’s ‘Communicate With Care’ Program"
+    },
+    {
+      "input": "The App Store is (well, was) lousy with blatant Wordle rip-offs, but one of them takes the cake",
+      "expect": "The App Store Is (Well, Was) Lousy With Blatant Wordle Rip-Offs, but One of Them Takes the Cake"
+    },
+    {
+      "input": "Document proxy icons in MacOS 11 and 12 as a — ahem — proxy for Apple’s current UI design sensibilities",
+      "expect": "Document Proxy Icons in MacOS 11 and 12 as a — Ahem — Proxy for Apple’s Current UI Design Sensibilities"
+    },
+    {
+      "input": "70/30 is fine for me, but not for thee",
+      "expect": "70/30 Is Fine for Me, but Not for Thee"
+    },
+    {
+      "input": "All podcasts are shows; Not all shows are podcasts",
+      "expect": "All Podcasts Are Shows; Not All Shows Are Podcasts"
+    },
+    {
+      "input": "Third-party USB-C to Lightning cables might come in mid-2019 (which is good, because I Still don’t think iPhone is ever going to switch to USB-C)",
+      "expect": "Third-Party USB-C to Lightning Cables Might Come in Mid-2019 (Which Is Good, Because I Still Don’t Think iPhone Is Ever Going to Switch to USB-C)"
+    },
+    {
+      "input": "ScreenShield — a Third-Party SDK that somehow allows iOS Apps to prevent screenshots",
+      "expect": "ScreenShield — a Third-Party SDK That Somehow Allows iOS Apps to Prevent Screenshots"
+    },
+    { "input": "‘Your’ vs. ‘my’", "expect": "‘Your’ vs. ‘My’" },
+    {
+      "input": "60 frames per second and the web",
+      "expect": "60 Frames per Second and the Web"
+    },
+    {
+      "input": "On switching and lock-in",
+      "expect": "On Switching and Lock-In"
+    },
+    {
+      "input": "Some tweaks to the @daringfireball Twitter account",
+      "expect": "Some Tweaks to the @daringfireball Twitter Account"
+    },
+    {
+      "input": "iMessage end-to-end encryption: We have to take Apple’s word for it",
+      "expect": "iMessage End-to-End Encryption: We Have to Take Apple’s Word for It"
+    },
+    { "input": "‘Everybody Loves Bob’", "expect": "‘Everybody Loves Bob’" },
+    {
+      "input": "It’s been a while since I’ve done the thing where I quote the entirety (or nearly so) of an article and then dissect/comment upon it line-by-line, but I do still have a taste for it, even though in this particular case it’s a month late",
+      "expect": "It’s Been a While Since I’ve Done the Thing Where I Quote the Entirety (or Nearly So) of an Article and Then Dissect/Comment Upon It Line-by-Line, but I Do Still Have a Taste for It, Even Though in This Particular Case It’s a Month Late"
+    },
+    {
+      "input": "Web apps vs. native apps is still a thing",
+      "expect": "Web Apps vs. Native Apps Is Still a Thing"
+    },
+    { "input": "iPad (3)", "expect": "iPad (3)" },
+    {
+      "input": "I’ma set it straight, this Watergate",
+      "expect": "I’ma Set It Straight, This Watergate"
+    },
+    {
+      "input": "Oceania: We have always required books from the Eurasian e-bookstore to be sold through our in-app purchasing system",
+      "expect": "Oceania: We Have Always Required Books From the Eurasian E-Bookstore to Be Sold Through Our In-App Purchasing System"
+    },
+    {
+      "input": "The practical vs. idealistic scenarios for the near-term future of online video",
+      "expect": "The Practical vs. Idealistic Scenarios for the Near-Term Future of Online Video"
+    },
+    {
+      "input": "Uniformity vs. individuality in Mac UI design",
+      "expect": "Uniformity vs. Individuality in Mac UI Design"
+    },
+    {
+      "input": "Getting there from here, where by ‘there’ I mean a web where Flash is not a de facto standard technology",
+      "expect": "Getting There From Here, Where by ‘There’ I Mean a Web Where Flash Is Not a De Facto Standard Technology"
+    },
+    {
+      "input": "iPhone 4 3G Data Performance",
+      "expect": "iPhone 4 3G Data Performance"
+    },
+    {
+      "input": "‘First to do it’ vs. ‘first to do it right’",
+      "expect": "‘First to Do It’ vs. ‘First to Do It Right’"
+    },
+    {
+      "input": "The Good and the Bad Regarding AT&T’s New Data Plans",
+      "expect": "The Good and the Bad Regarding AT&T’s New Data Plans"
+    },
+    { "input": "Post-I/O thoughts", "expect": "Post-I/O Thoughts" },
+    { "input": "Why 960 × 640", "expect": "Why 960 × 640" },
+    { "input": "GIF, H.264, and patents", "expect": "GIF, H.264, and Patents" },
+    {
+      "input": "A thought regarding the old Apple-v.-Microsoft ‘look and feel’ lawsuit",
+      "expect": "A Thought Regarding the Old Apple-v.-Microsoft ‘Look and Feel’ Lawsuit"
+    },
+    {
+      "input": "Yet more on the unfolding future-of-Flash-and-the-web saga",
+      "expect": "Yet More on the Unfolding Future-of-Flash-and-the-Web Saga"
+    },
+    {
+      "input": "‘A string of masterpieces’",
+      "expect": "‘A String of Masterpieces’"
+    },
+    { "input": "C:\\ONGRTLNS.OSX", "expect": "C:\\ONGRTLNS.OSX" },
+    { "input": "E.T.", "expect": "E.T." },
+    {
+      "input": "iPhone display color temperature, and the difference between builds 5A345 and 5A347 of the iPhone OS",
+      "expect": "iPhone Display Color Temperature, and the Difference Between Builds 5A345 and 5A347 of the iPhone OS"
+    },
+    { "input": "me.com", "expect": "me.com" },
+    { "input": "Spaces in 10.5.3", "expect": "Spaces in 10.5.3" },
+    { "input": "BlackBerry vs. iPhone", "expect": "BlackBerry vs. iPhone" },
+    {
+      "input": "Leopard details: anchored row selection in NSTableView",
+      "expect": "Leopard Details: Anchored Row Selection in NSTableView"
+    },
+    {
+      "input": "The ‘un’ in ‘unsupported’",
+      "expect": "The ‘Un’ in ‘Unsupported’"
+    },
+    {
+      "input": "Ways in which iTunes’s just-released official ringtone support is weird, rude, and/or just plain buggy",
+      "expect": "Ways in Which iTunes’s Just-Released Official Ringtone Support Is Weird, Rude, and/or Just Plain Buggy"
+    },
+    { "input": "C4[1] in a nut", "expect": "C4[1] in a Nut" },
+    {
+      "input": "Clipboard and text selection : iPhone :: arrow keys : original Macintosh",
+      "expect": "Clipboard and Text Selection : iPhone :: Arrow Keys : Original Macintosh"
+    },
+    {
+      "input": "Non-top-posting reply scripts for Apple Mail",
+      "expect": "Non-Top-Posting Reply Scripts for Apple Mail"
+    },
+    {
+      "input": "Can I get an ‘hallelujah’ for auto-completion with the Esc and F5 keys?",
+      "expect": "Can I Get an ‘Hallelujah’ for Auto-Completion With the Esc and F5 Keys?"
+    },
+    {
+      "input": "Standing in line with Mr. Jimmy",
+      "expect": "Standing in Line With Mr. Jimmy"
+    },
+    {
+      "input": "Using .htaccess redirection to standardize web server addresses",
+      "expect": "Using .htaccess Redirection to Standardize Web Server Addresses"
+    },
+    {
+      "input": "More on NSTextView’s ‘smart’ cut/copy/paste",
+      "expect": "More on NSTextView’s ‘Smart’ Cut/Copy/Paste"
+    },
+    {
+      "input": "O’Grady v. Superior Court",
+      "expect": "O’Grady v. Superior Court"
+    },
+    {
+      "input": "Several asinine and/or risky ideas regarding Apple’s strategy that Boot Camp does not portend",
+      "expect": "Several Asinine and/or Risky Ideas Regarding Apple’s Strategy That Boot Camp Does Not Portend"
+    },
+    {
+      "input": "iLife ’06 from the perspective of an anthropomorphized brushed metal interface",
+      "expect": "iLife ’06 From the Perspective of an Anthropomorphized Brushed Metal Interface"
+    },
+    {
+      "input": "On the discovery ruling in ‘Apple v. Does’",
+      "expect": "On the Discovery Ruling in ‘Apple v. Does’"
+    },
+    {
+      "input": "Just a bunch of links, but they’re good links, I swear",
+      "expect": "Just a Bunch of Links, but They’re Good Links, I Swear"
+    },
+    {
+      "input": "More accurate (but, admittedly, less sensational) alternative stencil slogans for the ‘Neistat Brothers’",
+      "expect": "More Accurate (but, Admittedly, Less Sensational) Alternative Stencil Slogans for the ‘Neistat Brothers’"
+    },
+    {
+      "input": "‘Grab HTML’ script for BBEdit, redux",
+      "expect": "‘Grab HTML’ Script for BBEdit, Redux"
+    },
+    { "input": "Anti-Anti-Aliasing", "expect": "Anti-Anti-Aliasing" },
+    {
+      "input": "Valid RSS 0.91 feeds from Movable Type",
+      "expect": "Valid RSS 0.91 Feeds From Movable Type"
+    },
+    {
+      "input": "A brief word on Netscape 7.0",
+      "expect": "A Brief Word on Netscape 7.0"
     }
   ]
 }

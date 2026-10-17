@@ -1,22 +1,37 @@
-function runTests(tests) {
-  const testGroups = Object.keys(tests)
+import { toTitleCase } from '../to-title-case.js'
+import tests from './tests.json' with { type: 'json' }
 
-  testGroups.forEach((groupName) => {
+const testGroups = Object.keys(tests)
+String.prototype.toTitleCase = toTitleCase
+
+QUnit.test('features', (assert) => {
+  /* Prototype assignment */
+  assert.equal(
+    'Nothing but capitals'.toTitleCase(),
+    toTitleCase('Nothing but Capitals')
+  )
+
+  /* Using options */
+  assert.equal(
+    toTitleCase('Nothing but capitals', {
+      lowercase: ['custom']
+    }),
+    'Nothing But Capitals'
+  )
+
+  /* Prototype and options together */
+  assert.equal(
+    'Nothing but capitals'.toTitleCase({
+      lowercase: ['custom']
+    }),
+    'Nothing But Capitals'
+  )
+})
+
+testGroups.forEach((groupName) => {
+  QUnit.test(groupName, (assert) => {
     tests[groupName].forEach((test) => {
-      QUnit.test(groupName, (assert) => {
-        assert.equal(test.input.toTitleCase(), test.expect)
-      })
+      assert.equal(toTitleCase(test.input), test.expect)
     })
   })
-}
-
-/* Distinguish between browser and node */
-if (typeof window === 'undefined') {
-  require('../to-title-case.js')
-  var QUnit = require('qunit')
-  const tests = require('./tests.json')
-  runTests(tests)
-} else {
-  /* globals jQuery */
-  jQuery.getJSON('tests.json').done(runTests)
-}
+})
