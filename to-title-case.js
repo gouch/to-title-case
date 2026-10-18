@@ -16,9 +16,9 @@ export function toTitleCase(str = '', options) {
     'à', 'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for', 'if', 'in',
     'nor', 'of', 'on', 'or', 'per', 'the', 'to', 'v', 'vs', 'via'
   ]
-  const abbrev = /\.\P{Space_Separator}/u
+  const dotted = /\.[\p{Letter}\P{Punctuation}]/u
   const hyphenated = /([-–])/u
-  const name = /\p{Letter}\p{Uppercase_Letter}+/u
+  const proper = /\p{Letter}\p{Uppercase_Letter}+/u
   const separator = /([\p{Space_Separator}/—])/u
   const subtitle = /(:\p{Space_Separator})/u
   const technical = /[:@]|\p{Letter}\p{Number}|\p{Number}\p{Letter}/u
@@ -46,8 +46,8 @@ export function toTitleCase(str = '', options) {
         .map((word, i, arr) => {
           if (
             separator.test(word) ||
-            abbrev.test(word) ||
-            name.test(word) ||
+            dotted.test(word) ||
+            proper.test(word) ||
             technical.test(word)
           ) {
             return word
