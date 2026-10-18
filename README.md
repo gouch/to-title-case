@@ -1,5 +1,5 @@
 # To Title Case for JavaScript
-Intelligently format titles, headlines and headings into consistent title case.
+Intelligently format titles and headings into consistent title case.
 
 ## Installation
 ### Browser
@@ -26,7 +26,7 @@ Or for a classic, global vibe, you can try:
 Install with `npm install @gouch/to-title-case` then import:
 
 ```js
-import { toTitleCase } from 'to-title-case'
+import { toTitleCase } from '@gouch/to-title-case'
 
 toTitleCase('make me a title') //→ Make Me a Title
 ```

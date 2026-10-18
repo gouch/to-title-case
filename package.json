@@ -1,6 +1,6 @@
 {
   "name": "@gouch/to-title-case",
-  "description": "Convert strings to title case with some intelligence.",
+  "description": "Intelligently format titles and headings into consistent title case.",
   "version": "3.0.0",
   "author": "David Gouch",
   "devDependencies": {
