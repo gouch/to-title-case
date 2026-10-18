@@ -1,45 +1,59 @@
-/* To Title Case © 2018 David Gouch | https://github.com/gouch/to-title-case */
+/*! To Title Case © 2008–2026 David Gouch
+ * https://github.com/gouch/to-title-case */
 
-export function toTitleCase (title = this) {
-  const smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|v.?|vs.?|via)$/i
-  const alphanumericPattern = /([A-Za-z0-9\u00C0-\u00FF])/
-  const wordSeparators = /([ :–—-])/
+export function toTitleCase(str, options) {
+  if (typeof this === 'string') {
+    options = str
+    str = this
+  }
 
-  return title.split(wordSeparators)
-    .map((current, index, array) => {
-      if (
-        /* Check for small words */
-        current.search(smallWords) > -1 &&
-        /* Skip first and last word */
-        index !== 0 &&
-        index !== array.length - 1 &&
-        /* Ignore title end and subtitle start */
-        array[index - 3] !== ':' &&
-        array[index + 1] !== ':' &&
-        /* Ignore small words that start a hyphenated phrase */
-        (array[index + 1] !== '-' ||
-          (array[index - 1] === '-' && array[index + 1] === '-'))
-      ) {
-        return current.toLowerCase()
+  /* prettier-ignore */
+  const lower = options?.lower || [
+    'à', 'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for', 'if', 'in',
+    'nor', 'of', 'on', 'or', 'per', 'the', 'to', 'v', 'vs', 'via'
+  ]
+
+  const abbrev = /\.\P{Space_Separator}/u
+  const hyphenated = /([-–])/u
+  const name = /\p{Letter}\p{Uppercase_Letter}+/u
+  const separator = /([\p{Space_Separator}/—])/u
+  const subtitle = /(:\p{Space_Separator})/u
+  const technical = /[:@]|\p{Letter}\p{Number}|\p{Number}\p{Letter}/u
+
+  const capitalize = (word, i, arr = []) =>
+    lower.includes(word.toLowerCase().match(/\p{Letter}+/gu)?.[0]) &&
+    i !== 0 &&
+    i !== arr.length - 1 &&
+    !/^[“‘]|[’”]$/.test(word)
+      ? word.toLowerCase()
+      : word.replace(/\p{Letter}/u, (letter) => letter.toUpperCase())
+
+  return str
+    .split(subtitle)
+    .map((side) => {
+      if (subtitle.test(side)) {
+        return side
       }
-
-      /* Ignore intentional capitalization */
-      if (current.substr(1).search(/[A-Z]|\../) > -1) {
-        return current
-      }
-
-      /* Ignore URLs */
-      if (array[index + 1] === ':' && array[index + 2] !== '') {
-        return current
-      }
-
-      /* Capitalize the first letter */
-      return current.replace(alphanumericPattern, (match) => {
-        return match.toUpperCase()
-      })
+      return side
+        .split(separator)
+        .map((word, i, arr) => {
+          if (
+            separator.test(word) ||
+            abbrev.test(word) ||
+            name.test(word) ||
+            technical.test(word)
+          ) {
+            return word
+          }
+          if (hyphenated.test(word)) {
+            return word
+              .split(hyphenated)
+              .map((w, i, a) => (hyphenated.test(w) ? w : capitalize(w, i, a)))
+              .join('')
+          }
+          return capitalize(word, i, arr)
+        })
+        .join('')
     })
     .join('')
 }
-
-// eslint-disable-next-line no-extend-native
-String.prototype.toTitleCase = toTitleCase
