@@ -16,7 +16,7 @@ Each year brings new ways to add JS to HTML. One modern option is:
 Or for a classic, global vibe, you can try:
 
 ```html
-<script src="to-title-case.cjs"><script>
+<script src="to-title-case.cjs"></script>
 <script>
   toTitleCase('make me a title') //→ Make Me a Title
 </script>
@@ -35,7 +35,7 @@ toTitleCase('make me a title') //→ Make Me a Title
 The script defines the function `toTitleCase()`, which applies title case rules to an input string. For best results, input is assumed to be sentence case or naive title case.
 
 ```js
-toTitleCase(‘make me a title’) //→ Make Me a Title
+toTitleCase('make me a title') //→ Make Me a Title
 ```
 
 ### Options
