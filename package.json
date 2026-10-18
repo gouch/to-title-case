@@ -5,7 +5,8 @@
   "author": "David Gouch",
   "devDependencies": {
     "prettier": "^3.9.0",
-    "qunit": "^3.0.0"
+    "qunit": "^3.0.0",
+    "typescript": "^7.0.0"
   },
   "keywords": [
     "prose",
@@ -15,10 +16,14 @@
   ],
   "license": "MIT",
   "repository": "github:gouch/to-title-case",
-  "main": "to-title-case.js",
   "type": "module",
+  "exports": {
+    "import": "to-title-case.js",
+    "require": "to-title-case.cjs"
+  },
   "scripts": {
-    "test": "prettier --check . && qunit test"
+    "test": "prettier --check **/*.js && ./build.bash && npm run types && qunit test",
+    "types": "tsc --allowJs --checkJs --noEmit test/ts.ts"
   },
   "prettier": {
     "semi": false,
