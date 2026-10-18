@@ -1,17 +1,26 @@
 /*! To Title Case © 2008–2026 David Gouch
  * https://github.com/gouch/to-title-case */
 
+/**
+ * @this {string | undefined}
+ * @param {string} str
+ * @param {string | {lower: string[]}} [options]
+ * @returns {string}
+ */
 export function toTitleCase(str, options) {
   if (typeof this === 'string') {
     options = str
     str = this
   }
 
-  /* prettier-ignore */
-  const lower = options?.lower || [
-    'à', 'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for', 'if', 'in',
-    'nor', 'of', 'on', 'or', 'per', 'the', 'to', 'v', 'vs', 'via'
-  ]
+  const lower =
+    typeof options === 'object'
+      ? options?.lower
+      : /* prettier-ignore */
+        [
+          'à', 'a', 'an', 'and', 'as', 'at', 'but', 'by', 'en', 'for', 'if',
+          'in', 'nor', 'of', 'on', 'or', 'per', 'the', 'to', 'v', 'vs', 'via'
+        ]
 
   const abbrev = /\.\P{Space_Separator}/u
   const hyphenated = /([-–])/u
@@ -20,8 +29,12 @@ export function toTitleCase(str, options) {
   const subtitle = /(:\p{Space_Separator})/u
   const technical = /[:@]|\p{Letter}\p{Number}|\p{Number}\p{Letter}/u
 
+  /**
+   * @param {string} word @param {number} i @param {string[]} arr
+   * @returns {string}
+   */
   const capitalize = (word, i, arr = []) =>
-    lower.includes(word.toLowerCase().match(/\p{Letter}+/gu)?.[0]) &&
+    lower.includes(word.toLowerCase().match(/\p{Letter}+/gu)?.[0] || '') &&
     i !== 0 &&
     i !== arr.length - 1 &&
     !/^[“‘]|[’”]$/.test(word)
