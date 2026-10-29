@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.1 / 2026-10-29
+- Fix typos in documentation.
+
 ## 3.0.0 / 2026-10-17
 The 18th-anniversary update.
 

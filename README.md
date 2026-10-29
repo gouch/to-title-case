@@ -46,7 +46,7 @@ toTitleCase('make me a title', { lowercase: ['me'] }) //→ Make me A Title
 ```
 
 ## What Is Title Case?
-Title case, or headline case, is a convention for formatting the article titles and headings. It basically just means capitalizing each word, but there a few exceptions that look odd if you miss them.
+Title case, or headline case, is a convention for formatting the titles of articles and the headings within. It does basically amount to capitalizing each word, but with a few lowercase exceptions that look odd if you miss them.
 
 Most well-known style guides follow *dynamic* rules that switch depending on how a word is being used in context. Evaluating grammar is outside the scope of a small script, so this script follows static, consistent rules. Those rules are a close match to the New York Times style guide.
 

@@ -1,7 +1,7 @@
 {
   "name": "@gouch/to-title-case",
   "description": "Intelligently format titles and headings into consistent title case.",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "David Gouch",
   "devDependencies": {
     "prettier": "^3.9.0",
