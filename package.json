@@ -1,7 +1,7 @@
 {
   "name": "@gouch/to-title-case",
   "description": "Intelligently format titles and headings into consistent title case.",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "David Gouch",
   "devDependencies": {
     "prettier": "^3.9.0",
@@ -18,8 +18,8 @@
   "repository": "github:gouch/to-title-case",
   "type": "module",
   "exports": {
-    "import": "to-title-case.js",
-    "require": "to-title-case.cjs"
+    "import": "./to-title-case.js",
+    "require": "./to-title-case.cjs"
   },
   "scripts": {
     "test": "prettier --check **/*.js && ./build.bash && npm run types && qunit test",

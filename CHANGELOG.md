@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.2 / 2026-10-31
+- Fix `exports` paths. Thanks [@jayliu50](https://github.com/jayliu50) for report.
+
 ## 3.0.1 / 2026-10-29
 - Fix typos in documentation.
 
